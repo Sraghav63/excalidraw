@@ -47,6 +47,13 @@ body.excalidraw-cursor-resize * {
   button {
     cursor: pointer;
     user-select: none;
+    border: none;
+    background: none;
+    padding: 0;
+    margin: 0;
+    font: inherit;
+    color: inherit;
+    line-height: inherit;
   }
 
   &:focus {
@@ -99,6 +106,11 @@ body.excalidraw-cursor-resize * {
   &__canvas-wrapper,
   &__canvas.static {
     pointer-events: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
   }
 
   &__canvas {
@@ -133,6 +145,12 @@ body.excalidraw-cursor-resize * {
     padding-right: var(--sar, 0);
     padding-bottom: var(--sab, 0);
     padding-left: var(--sal, 0);
+    position: absolute;
+    z-index: var(--zIndex-layerUI);
+    pointer-events: none;
+    > * {
+      pointer-events: auto;
+    }
   }
 
   .panelRow {
